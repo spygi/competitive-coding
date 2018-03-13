@@ -1,0 +1,8 @@
+*.pyc
+*.class
+
+.DS_Store
+.idea
+*.iml
+out/
+.gradle
