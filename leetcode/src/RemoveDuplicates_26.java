@@ -4,13 +4,13 @@ import java.util.Arrays;
 /**
  * Created by sg on 04.05.18.
  */
-public class Solution
+public class RemoveDuplicates_26
 {
     int currentStart;
     int finalLen;
 
 
-    public Solution()
+    public RemoveDuplicates_26()
     {
         currentStart = 0;
         finalLen = -1;
@@ -29,15 +29,15 @@ public class Solution
         finalLen = nums.length;
 
         while ( currentStart < finalLen - 1 ) {
-            int currentlyChecked = nums[currentStart];
+            int currentlyChecked = nums[ currentStart ];
             try {
-                int duplIndex = Arrays.binarySearch(nums, currentStart + 1, finalLen, currentlyChecked);
-                while (duplIndex >= 0) {
-                    shiftLeft(nums, duplIndex);
+                int duplIndex = Arrays.binarySearch( nums, currentStart + 1, finalLen, currentlyChecked );
+                while ( duplIndex >= 0 ) {
+                    shiftLeft( nums, duplIndex );
                     // continue looking because binary search can return anything
-                    duplIndex = Arrays.binarySearch(nums, currentStart + 1, finalLen, currentlyChecked);
+                    duplIndex = Arrays.binarySearch( nums, currentStart + 1, finalLen, currentlyChecked );
                 }
-            } catch (IllegalArgumentException e) {
+            } catch ( IllegalArgumentException e ) {
                 //  can happen due to second binary search
                 // TODO: remove this
                 return finalLen;
@@ -77,8 +77,8 @@ public class Solution
 
     public static void main( String[] args )
     {
-        int[] nums = { 0,0,1,1,1,2,2,3,3,4 };
-        int len = new Solution().removeDuplicates( nums );
+        int[] nums = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+        int len = new RemoveDuplicates_26().removeDuplicates( nums );
         for ( int i = 0; i < len; i++ ) {
             System.out.print( nums[ i ] + " " );
         }
