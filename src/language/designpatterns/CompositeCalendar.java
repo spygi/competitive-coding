@@ -1,8 +1,8 @@
 package language.designpatterns;
 
 /**
- * In fact CompositeCalendar (or any other concrete calendar) could extend a common abstract type.
- * This is done for convenience: put them all in the same List<> on the Usage.
+ * In fact CompositeCalendar (or any other concrete calendar) do not need to extend a common abstract type.
+ * This is done only for convenience for the client: to be able to put them all in the same List<Calendar>, see Client.
  */
 public class CompositeCalendar extends Calendar {
     GoogleCalendar gCal;

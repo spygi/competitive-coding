@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Usage {
+public class Client {
     public static void main(String[] args) {
         List<Calendar> calendars = new ArrayList<>();
         GoogleCalendar gCal = new GoogleCalendar();
